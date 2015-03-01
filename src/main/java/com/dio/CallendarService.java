@@ -23,10 +23,11 @@ public class CallendarService {
         return e;
     }
 
-    public void createEvent(String title, String description,
+    public Event createEvent(String title, String description,
                             Date d, List<String> attenders){
         Event event = new Event.Builder().setTitle(title).setDescription(description).
                 setDate(d).setAttenders(attenders).build();
+        return event;
     }
 
 }
