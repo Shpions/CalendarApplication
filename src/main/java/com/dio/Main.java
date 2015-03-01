@@ -4,6 +4,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class Main {
@@ -23,15 +25,16 @@ public class Main {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 
-        /*CallendarService calendarService = (CallendarService) context.getBean("service");
-
+        CallendarService calendarService = (CallendarService) context.getBean("service");
+        Date d = new Date(2015,3,13);
         Event meeting = new Event.Builder()
                 .setTitle("Birthday")
                 .setDescription("Just abirthday party")
                 .setAttenders(Arrays.asList("x@ukr.net", "ivon@yahoo.com", "ton@zen.ru"))
-                .setDate(new Date())
+                .setDate(d)
                 .build();
-**/
 
+
+        System.out.println(meeting);
     }
 }

@@ -1,11 +1,7 @@
 package com.dio;
 
-
-
 import java.util.Date;
 import java.util.List;
-
-
 
 public class Event {
     private String description;
@@ -73,7 +69,7 @@ public class Event {
             return this;
         }
 
-        public Builder setDate() {
+        public Builder setDate(Date date) {
             this.date = date;
             return this;
         }

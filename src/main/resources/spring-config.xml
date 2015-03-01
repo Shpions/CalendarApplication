@@ -6,21 +6,15 @@
     <context:annotation-config />
     <context:component-scan base-package="com.dio"/>
 
-    <bean id = "event" class="com.dio.Event" scope= "prototype">
+    <bean id = "event" class="com.dio.Event">
         <constructor-arg index="0" ref="build"/>
     </bean>
 
-    <bean id = "build" class = "com.dio.Event$Builder">
-        <property name="title" value="birthday"></property>
+    <bean id = "build" class = "com.dio.Event.Builder">
 
-        <property name="description" value="birthday party"></property>
 
     </bean>
 
-    <bean id = "builderM"
-          factory-bean="build"
-          factory-method="build"  >
-    </bean>
 
     <bean id = "service" class="com.dio.CallendarService">
     </bean>

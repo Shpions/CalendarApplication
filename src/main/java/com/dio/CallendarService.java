@@ -1,5 +1,6 @@
 package com.dio;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,9 +24,9 @@ public class CallendarService {
     }
 
     public void createEvent(String title, String description,
-                            int y, int m, int d, List<String> attenders){
+                            Date d, List<String> attenders){
         Event event = new Event.Builder().setTitle(title).setDescription(description).
-                setDate().setAttenders(attenders).build();
+                setDate(d).setAttenders(attenders).build();
     }
 
 }
