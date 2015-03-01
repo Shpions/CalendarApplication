@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config />
+    <context:component-scan base-package="com.dio"/>
+
+    <bean id = "event" class="com.dio.Event" scope= "prototype">
+        <constructor-arg index="0" ref="build"/>
+    </bean>
+
+    <bean id = "build" class = "com.dio.Event$Builder">
+        <property name="title" value="birthday"></property>
+
+        <property name="description" value="birthday party"></property>
+
+    </bean>
+
+    <bean id = "builderM"
+          factory-bean="build"
+          factory-method="build"  >
+    </bean>
+
+    <bean id = "service" class="com.dio.CallendarService">
+    </bean>
+
+    <bean id = "main" class="com.dio.Main">
+    </bean>
+
+</beans>
