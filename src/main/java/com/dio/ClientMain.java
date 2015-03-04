@@ -22,15 +22,20 @@ public class ClientMain {
 
         String s[] ={"xxi@ukr.net","spy@yahoo.com", "go@gmail.com"};
         List<String> list = new ArrayList<String>(Arrays.asList(s));
+        String s1[] ={"sp1y@yahoo.com", "go@gmail.com"};
+        List<String> list1 = new ArrayList<String>(Arrays.asList(s1));
         service.add_Event(service.create_Event("Drunk Party", "just a drunk party", new Date(2015,3,5,19,45), new Date(2015,3,5,22,45), list));
         service.add_Event(service.create_Event("Event", "buisness", new Date(2015,3,5,16,30), new Date(2015,3,5,17,45), list));
         service.add_Event(service.create_Event("Eaaavent", "buisssssness", new Date(2015,3,5,23,00), new Date(2015,3,5,23,15), list));
+
+        service.add_Event(service.create_Event("Checkt", "test", new Date(2015,3,5,23,30), new Date(2015,3,5,23,40), list1));
         //System.out.println(service.get_Time_For_Event(new Date(2015,3,5,16,50), s));
 
         //System.out.println(service.find_Event_By_time("xxi@ukr.net", new Date(2015,3,5,16,55)));
 
             //logger.info("Created event in data store: " + service.search_Event("Drunk Party"));
-        System.out.println(service.get_Time_For_Event(new Date(2015, 3, 5, 17, 00), s));
-        //System.out.println(service.get_Time_For_Event(new Date(2015, 3, 5, 19, 50), s));
+        //System.out.println(service.get_Time_For_Event(new Date(2015, 3, 5, 20, 00), s));
+        System.out.println(service.get_Time_For_Event(new Date(2015, 3, 5, 19, 50), s1));
+        //System.out.println(service.check_For_busy("xxi@ukr.net", new Date(2015,3,5,23,00)));
     }
 }

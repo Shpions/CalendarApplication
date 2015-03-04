@@ -83,27 +83,12 @@ public class CalendarService implements RemoteInterface{
     }
 
     public Date get_Time_For_Event(Date d, String... mails){
-        Date d2 = new Date(d.getYear(),d.getMonth(),d.getDay(),d.getHours(),d.getMinutes()-15);
-        Date d3 = new Date(d.getYear(),d.getMonth(),d.getDay(),d.getHours(),d.getMinutes()+15);
-        Date res = new Date();
-        boolean b = false;
         for(String mail : mails){
-            if (check_For_busy(mail,d) == false &&
-                    check_For_busy(mail,d2) == true &&
-                    check_For_busy(mail, d3) == true){
-                b = true;
-            }
-            else{
-                d = get_Time_For_Event(find_Event_By_time(mail, d).getEndDate(), mails);
-                res = new Date(d.getYear(),d.getMonth(),d.getDate(),d.getHours(),d.getMinutes()+15);
-                b = false;
+            while (check_For_busy(mail, d)){
+                long i = d.getTime() + 60000 * 15;
+                d.setTime(i);
             }
         }
-        if(!b){
-            res = get_Time_For_Event(d, mails);
-        }
-        return res;
+        return d;
     }
-
-
 }
