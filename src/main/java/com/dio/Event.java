@@ -1,19 +1,22 @@
 package com.dio;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class Event {
+public class Event implements Serializable{
     private String description;
     private List<String> attenders;
-    private Date date;
+    private Date startDate;
+    private Date endDate;
     private String title;
 
 
     private Event(Builder builder) {
         this.description = builder.description;
         this.attenders = builder.attenders;
-        this.date = builder.date;
+        this.startDate = builder.startDate;
+        this.endDate = builder.endDate;
         this.title = builder.title;
     }
 
@@ -22,9 +25,18 @@ public class Event {
         return "Event{" +
                 "description='" + description + '\'' +
                 ", attenders=" + attenders +
-                ", date=" + date +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
                 ", title='" + title + '\'' +
                 '}';
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
     }
 
     public String getDescription() {
@@ -35,9 +47,7 @@ public class Event {
         return attenders;
     }
 
-    public Date getDate() {
-        return date;
-    }
+
 
     public String getTitle() {
         return title;
@@ -46,7 +56,8 @@ public class Event {
     public static class Builder{
         private String description;
         private List<String> attenders;
-        private Date date;
+        private Date startDate;
+        private Date endDate;
         private String title;
 
         public Builder() {
@@ -55,7 +66,8 @@ public class Event {
         public Builder(Event e) {
             this.description = e.description;
             this.attenders = e.attenders;
-            this.date = e.date;
+            this.startDate = e.startDate;
+            this.endDate = e.endDate;
             this.title = e.title;
         }
 
@@ -69,8 +81,13 @@ public class Event {
             return this;
         }
 
-        public Builder setDate(Date date) {
-            this.date = date;
+        public Builder setStartDate(Date startDate) {
+            this.startDate = startDate;
+            return this;
+        }
+
+        public Builder setEndDate(Date endDate) {
+            this.endDate = endDate;
             return this;
         }
 
