@@ -25,6 +25,7 @@ public interface ServiceInterface extends Remote {
 
     void add_Event(Event e) throws RemoteException;
 
+    //local code review (vtegza): public by default @ 09.03.15
     public boolean time_compare(Event e, Date d) throws RemoteException;
 
     public Event remove_Event(String title)throws RemoteException;

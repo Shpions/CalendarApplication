@@ -1,3 +1,4 @@
+//local code review (vtegza): package name should always be in lover case @ 09.03.15
 package com.dio.Skeleton;
 
 import java.io.Serializable;
@@ -5,6 +6,8 @@ import java.util.Date;
 import java.util.List;
 
 public class Event implements Serializable{
+
+    //local code review (vtegza): should be final @ 09.03.15
     private String description;
     private List<Person> attenders;
     private Date startDate;

@@ -11,6 +11,7 @@ import static java.util.Arrays.asList;
 
 public class CalendarService implements ServiceInterface {
 
+    //local code review (vtegza): not used, should be private @ 09.03.15
     public static final Logger logger = Logger.getAnonymousLogger();
     private final CalendarDataStore dataStore;
 
@@ -19,6 +20,7 @@ public class CalendarService implements ServiceInterface {
         this.dataStore = dataStore;
     }
 
+    //local code review (vtegza): name should be given in camelCase @ 09.03.15
     public void add_Event(Event e ){
         dataStore.publish(e);
     }
@@ -38,6 +40,7 @@ public class CalendarService implements ServiceInterface {
         ArrayList <Event>events = all_Event_For_Person(p);
 
         ArrayList <Event> eventList = new ArrayList<Event>();
+        //local code review (vtegza): give readable names for every variable @ 09.03.15
         for(Event e : events){
             if(e.getStartDate().getMonth() == d.getMonth() && e.getStartDate().getDay() == d.getDay()
                     && e.getStartDate().getYear() == d.getYear() ||
