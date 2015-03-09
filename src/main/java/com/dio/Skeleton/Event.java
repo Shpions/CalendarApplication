@@ -1,4 +1,4 @@
-package com.dio;
+package com.dio.Skeleton;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Event implements Serializable{
     private String description;
-    private List<String> attenders;
+    private List<Person> attenders;
     private Date startDate;
     private Date endDate;
     private String title;
@@ -43,7 +43,7 @@ public class Event implements Serializable{
         return description;
     }
 
-    public List<String> getAttenders() {
+    public List<Person> getAttenders() {
         return attenders;
     }
 
@@ -55,7 +55,7 @@ public class Event implements Serializable{
 
     public static class Builder{
         private String description;
-        private List<String> attenders;
+        private List<Person> attenders;
         private Date startDate;
         private Date endDate;
         private String title;
@@ -76,7 +76,7 @@ public class Event implements Serializable{
             return this;
         }
 
-        public Builder setAttenders(List<String> attenders) {
+        public Builder setAttenders(List<Person> attenders) {
             this.attenders = attenders;
             return this;
         }
@@ -99,4 +99,6 @@ public class Event implements Serializable{
             return new Event(this);
         }
     }
+
+
 }
