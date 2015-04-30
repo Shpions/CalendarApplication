@@ -1,6 +1,6 @@
-package com.dio.DataStore;
+package com.dio.datastore;
 
-import com.dio.Skeleton.Event;
+import com.dio.skeleton.Event;
 
 import java.util.ArrayList;
 

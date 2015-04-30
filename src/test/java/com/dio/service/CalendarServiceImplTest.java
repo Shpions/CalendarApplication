@@ -1,11 +1,9 @@
 package com.dio.service;
 
-import com.dio.DataStore.CalendarDataStore;
-import com.dio.DataStore.CalendarDataStoreImpl;
-import com.dio.Service.CalendarService;
-import com.dio.Service.ServiceInterface;
-import com.dio.Skeleton.Event;
-import com.dio.Skeleton.Person;
+import com.dio.datastore.CalendarDataStore;
+import com.dio.datastore.CalendarDataStoreImpl;
+import com.dio.skeleton.Event;
+import com.dio.skeleton.Person;
 import org.junit.Test;
 
 import java.util.*;
@@ -34,7 +32,7 @@ public class CalendarServiceImplTest {
         ServiceInterface service = new CalendarService(dataStore);
 
         // invoke method on class to test
-        Event returnedValue = service.remove_Event(inputName);
+        Event returnedValue = service.removeEvent(inputName);
 
         // assert return value
         assertEquals(expectedEvent, returnedValue);
@@ -58,7 +56,7 @@ public class CalendarServiceImplTest {
         ServiceInterface service = new CalendarService(dataStore);
 
         // invoke method on class to test
-        Event returnedValue = service.search_Event(inputName);
+        Event returnedValue = service.searchEvent(inputName);
 
         // assert return value
         assertEquals(expectedEvent, returnedValue);
@@ -142,9 +140,9 @@ public class CalendarServiceImplTest {
 
 
         // invoke method on class to test
-        when(service.all_Event_On_Date(p1,new Date(2008, 6,8,10, 10))).thenReturn(list);
+        when(service.allEventOnDate(p1, new Date(2008, 6, 8, 10, 10))).thenReturn(list);
 
-        ArrayList <Event> returnValue = service.all_Event_On_Date(p1,new Date(2008, 6,8,10, 10));
+        ArrayList <Event> returnValue = service.allEventOnDate(p1, new Date(2008, 6, 8, 10, 10));
         ArrayList <Event> expValue = list;
 
         // assert return value
@@ -188,9 +186,9 @@ public class CalendarServiceImplTest {
 
 
         // invoke method on class to test
-         when(service.time_compare(exEvent1, new Date(2008, 6,8, 10, 10)))
+         when(service.timeCompare(exEvent1, new Date(2008, 6, 8, 10, 10)))
                 .thenReturn(true);
-        boolean b = service.time_compare(exEvent1, new Date(2008, 6,8, 10, 10));
+        boolean b = service.timeCompare(exEvent1, new Date(2008, 6, 8, 10, 10));
 
 
         // assert return value
@@ -205,9 +203,9 @@ public class CalendarServiceImplTest {
         ServiceInterface service = mock(CalendarService.class);
 
         // invoke method on class to test
-        when(service.check_For_busy(p1, new Date(2015,3,4,12,00))).thenReturn(false);
+        when(service.checkForBusy(p1, new Date(2015, 3, 4, 12, 00))).thenReturn(false);
 
-        boolean res = service.check_For_busy(p1, new Date(2015,3,4,12,00));
+        boolean res = service.checkForBusy(p1, new Date(2015, 3, 4, 12, 00));
 
 
         // assert return value
@@ -250,9 +248,9 @@ public class CalendarServiceImplTest {
         ServiceInterface service = mock(CalendarService.class);
 
         // invoke method on class to test
-        when(service.find_Event_By_time(p1, new Date(2008, 6,8,10, 10))).thenReturn(exEvent1);
+        when(service.findEventByTime(p1, new Date(2008, 6, 8, 10, 10))).thenReturn(exEvent1);
 
-        Event e = service.find_Event_By_time(p1, new Date(2008, 6, 8, 10, 10));
+        Event e = service.findEventByTime(p1, new Date(2008, 6, 8, 10, 10));
 
         // assert return value
         assertEquals(e, exEvent1);

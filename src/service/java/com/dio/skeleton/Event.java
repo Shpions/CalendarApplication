@@ -1,15 +1,15 @@
-package com.dio.Skeleton;
+package com.dio.skeleton;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 public class Event implements Serializable{
-    private String description;
-    private List<Person> attenders;
-    private Date startDate;
-    private Date endDate;
-    private String title;
+    private final String description;
+    private final List<Person> attenders;
+    private final Date startDate;
+    private final Date endDate;
+    private final String title;
 
 
     private Event(Builder builder) {

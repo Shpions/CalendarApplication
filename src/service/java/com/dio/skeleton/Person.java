@@ -1,4 +1,4 @@
-package com.dio.Skeleton;
+package com.dio.skeleton;
 
 import java.io.Serializable;
 

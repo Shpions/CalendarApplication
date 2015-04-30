@@ -1,7 +1,8 @@
-package com.dio.DataStore;
+package com.dio.datastore;
 
-import com.dio.Skeleton.Person;
+import com.dio.skeleton.Person;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 
@@ -27,7 +28,7 @@ public class PersonAdapter implements Serializable {
     public String getFirstName() {
         return firstName;
     }
-
+    @XmlElement (name="name")
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -35,7 +36,7 @@ public class PersonAdapter implements Serializable {
     public String getSecondName() {
         return secondName;
     }
-
+    @XmlElement(name="surname")
     public void setSecondName(String secondName) {
         this.secondName = secondName;
     }
@@ -43,7 +44,7 @@ public class PersonAdapter implements Serializable {
     public String getEmail() {
         return email;
     }
-
+    @XmlElement(name="email")
     public void setEmail(String email) {
         this.email = email;
     }
@@ -51,7 +52,7 @@ public class PersonAdapter implements Serializable {
     public String getPhone() {
         return phone;
     }
-
+    @XmlElement(name="phone")
     public void setPhone(String phone) {
         this.phone = phone;
     }

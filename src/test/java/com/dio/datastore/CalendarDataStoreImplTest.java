@@ -1,9 +1,7 @@
 package com.dio.datastore;
 
-import com.dio.DataStore.CalendarDataStore;
-import com.dio.DataStore.CalendarDataStoreImpl;
-import com.dio.Skeleton.Event;
-import com.dio.Skeleton.Person;
+import com.dio.skeleton.Event;
+import com.dio.skeleton.Person;
 import org.junit.Test;
 
 import java.util.*;

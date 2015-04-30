@@ -1,21 +1,18 @@
-package com.dio.DataStore;
+package com.dio.datastore;
 
-import com.dio.Skeleton.Event;
-import com.dio.Skeleton.Person;
+import com.dio.skeleton.Event;
+import com.dio.skeleton.Person;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @XmlRootElement
-@XmlType(name = "event")
 public class EventAdapter implements Serializable {
 
-    private String name;
+    private String title;
     private String description;
     private Date startDate;
     private Date endDate;
@@ -26,7 +23,7 @@ public class EventAdapter implements Serializable {
     }
 
     public EventAdapter(Event event) {
-        this.name = event.getTitle();
+        this.title = event.getTitle();
         this.description = event.getDescription();
         this.startDate = event.getStartDate();
         this.endDate = event.getEndDate();
@@ -40,43 +37,50 @@ public class EventAdapter implements Serializable {
         }
     }
 
-    @XmlElement(name = "person")
-    public String getName() {
-        return name;
+
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @XmlElement(name="title")
+    public void setTitle(String name) {
+        this.title = name;
     }
 
     public String getDescription() {
         return description;
     }
 
+    @XmlElement(name="description")
     public void setDescription(String description) {
         this.description = description;
     }
+
 
     public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartTime(Date startDate) {
+    @XmlElement(name="startDate")
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndTime() {
+
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndTime(Date endTime) {
-        this.endDate = endTime;
+    @XmlElement(name="endDate")
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public List<PersonAdapter> getAttenders() {
         return attenders;
     }
 
+    @XmlElement(name="attenders")
     public void setAttenders(List<PersonAdapter> attenders) {
         this.attenders = attenders;
     }
@@ -91,7 +95,7 @@ public class EventAdapter implements Serializable {
         if (attenders != null ? !attenders.equals(that.attenders) : that.attenders != null) return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
         if (endDate != null ? !endDate.equals(that.endDate) : that.endDate!= null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (title != null ? !title.equals(that.title) : that.title != null) return false;
         if (startDate != null ? !startDate.equals(that.startDate) : that.startDate != null) return false;
 
         return true;
@@ -99,7 +103,7 @@ public class EventAdapter implements Serializable {
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
+        int result = title != null ? title.hashCode() : 0;
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
         result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
@@ -110,10 +114,10 @@ public class EventAdapter implements Serializable {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("EventAdapter{");
-        sb.append("name='").append(name).append('\'');
+        sb.append("title='").append(title).append('\'');
         sb.append(", description='").append(description).append('\'');
-        sb.append(", startTime=").append(startDate);
-        sb.append(", endTime=").append(endDate);
+        sb.append(", startDate=").append(startDate);
+        sb.append(", endDate=").append(endDate);
         sb.append(", attenders=").append(attenders);
         sb.append('}');
         return sb.toString();
