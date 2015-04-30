@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<eventAdapter>
+    <attenders>
+        <email>xxiii@ukr.net</email>
+        <name>Stas</name>
+        <phone>04050423</phone>
+        <surname>Grin</surname>
+    </attenders>
+    <attenders>
+        <email>ksu@ukr.net</email>
+        <name>Ksu</name>
+        <phone>0635673214</phone>
+        <surname>Havr</surname>
+    </attenders>
+    <description>Beer party</description>
+    <endDate>3915-06-05T23:11:00+03:00</endDate>
+    <startDate>3915-06-05T20:11:00+03:00</startDate>
+    <title>beer</title>
+</eventAdapter>

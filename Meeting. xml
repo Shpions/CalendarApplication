@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<eventAdapter>
+    <attenders>
+        <email>pol@mail.ru</email>
+        <name>Oleg</name>
+        <phone>050253345243</phone>
+        <surname>Polka</surname>
+    </attenders>
+    <attenders>
+        <email>karp@gmail.com</email>
+        <name>Irena</name>
+        <phone>05123543</phone>
+        <surname>Karpa</surname>
+    </attenders>
+    <description>fuck up</description>
+    <endDate>3915-07-06T13:00:00+03:00</endDate>
+    <startDate>3915-07-06T12:00:00+03:00</startDate>
+    <title>Meeting</title>
+</eventAdapter>

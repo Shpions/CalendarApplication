@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<eventAdapter>
+    <attenders>
+        <email>xxiii@ukr.net</email>
+        <name>Stas</name>
+        <phone>04050423</phone>
+        <surname>Grin</surname>
+    </attenders>
+    <attenders>
+        <email>ksu@ukr.net</email>
+        <name>Ksu</name>
+        <phone>0635673214</phone>
+        <surname>Havr</surname>
+    </attenders>
+    <description>no desc</description>
+    <endDate>3915-05-04T19:00:00+03:00</endDate>
+    <startDate>3915-05-04T17:00:00+03:00</startDate>
+    <title>titlesTest</title>
+</eventAdapter>
